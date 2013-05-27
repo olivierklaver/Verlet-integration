@@ -1,0 +1,1 @@
+function Point(e,t){function s(){n.x>width/ratio&&(n.x=width/ratio);n.x<0&&(n.x=0);n.y>height/ratio&&(n.y=height/ratio);n.y<0&&(n.y=0)}var n=this,r,i;n.x=0;n.y=0;(n.setPos=function(e,t){n.x=r=e;n.y=i=t})(e,t);n.refresh=function(){var e=n.x,t=n.y;n.x+=n.x-r;n.y+=n.y-i;r=e;i=t;s()}};

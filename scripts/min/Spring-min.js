@@ -1,0 +1,1 @@
+function Spring(e,t){var n=this,r=e.x-t.x,i=e.y-t.y,s=Math.sqrt(r*r+i*i);n.pointa=e;n.pointb=t;n.contract=function(){var e=n.pointb.x-n.pointa.x,t=n.pointb.y-n.pointa.y,r=Math.sqrt(e*e+t*t),i=s-r,o=i*e/r*Spring.stiffness,u=i*t/r*Spring.stiffness;n.pointa.x-=o;n.pointa.y-=u;n.pointb.x+=o;n.pointb.y+=u}}Spring.stiffness=.2;
