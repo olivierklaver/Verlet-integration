@@ -60,6 +60,8 @@ function setup() {
     context.canvas.style.width = w + 'px';
     context.canvas.style.height = h + 'px';
 
+    parameter("frameRate", "fps:", 0, 60);
+
     createBlob();
 }
 
@@ -167,7 +169,7 @@ function draw() {
     context.fillRect(0, 0, width, height);
 
     renderShape();
-    debugDraw();
+    // debugDraw();
 }
 
 
