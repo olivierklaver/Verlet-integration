@@ -10,10 +10,11 @@
 "use strict";
 
 var backgroundColor = "#eee";
-var blobColor = "#78FFD0";
+var blobColor       = "#78FFD0";
+var renderMode      = 2;
 
 var ratio;
-var pointList = [];
+var pointList  = [];
 var springList = [];
 
 var RELAXATION = 5;
@@ -60,7 +61,10 @@ function setup() {
     context.canvas.style.width = w + 'px';
     context.canvas.style.height = h + 'px';
 
-    parameter("frameRate", "fps:", 0, 60);
+
+    // add parameters
+    parameter("frameRate", "FPS:", 0, 60);
+    parameter("renderMode", "Render mode:", 0, 2);
 
     createBlob();
 }
@@ -76,7 +80,7 @@ function createBlob() {
     var posX = 200;
     var posY = 270;
 
-    Spring.stiffness = 0.01;
+    Spring.stiffness = 0.02;
 
     var segments = 60;
     var radius   = 190;
@@ -168,8 +172,17 @@ function draw() {
     context.fillStyle = backgroundColor;
     context.fillRect(0, 0, width, height);
 
-    renderShape();
-    // debugDraw();
+    switch(renderMode){
+        case 0:
+            renderShape();
+            debugDraw();
+            break;
+        case 1:
+            debugDraw();
+            break;
+        default:
+            renderShape();
+    }
 }
 
 
