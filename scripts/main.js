@@ -17,7 +17,7 @@ var ratio;
 var pointList  = [];
 var springList = [];
 
-var RELAXATION = 5;
+var RELAXATION = 3;
 
 var xSpeed = 10;
 var ySpeed = 10;
@@ -77,15 +77,15 @@ function setup() {
 function createBlob() {
 
     // start position
-    var posX = 200;
-    var posY = 270;
+    var posX = width/ratio/2;
+    var posY = height/ratio/2;
 
-    Spring.stiffness = 0.02;
+    Spring.stiffness = 0.005;
 
-    var segments = 60;
+    var segments = 50;
     var radius   = 190;
 
-    var partner = 12;
+    var partner = 20;
 
     // define the outer ring in points
     (function drawRim(segments, radius, xoffset, yoffset) {
@@ -119,7 +119,7 @@ function createBlob() {
         springList.push(new Spring(pointList[i], pointList[normalize(i - partner / 1.5)]));
 
         // beams 3
-        springList.push(new Spring(pointList[i], pointList[normalize(i - partner / 2)]));
+        // springList.push(new Spring(pointList[i], pointList[normalize(i - partner / 2)]));
 
         // beams 4 (short)
         springList.push(new Spring(pointList[i], pointList[normalize(i - partner / 4)]));
@@ -147,11 +147,22 @@ function createBlob() {
  * Sketchpad - draw()
  */
 
+var c = 0;
+var startX;
+var startY;
+
 function draw() {
 
     // move Blob
-    pointList[pointList.length - 1].x += xSpeed;
-    pointList[pointList.length - 1].y += ySpeed;
+    if(!startX) startX = pointList[pointList.length - 1].x;
+    if(!startY) startY = pointList[pointList.length - 1].y;
+
+    var x = Math.sin(c) * 30;
+    var y = Math.cos(c) * 35;
+    c+=.15;
+
+    pointList[pointList.length - 1].x = startX + x; //xSpeed;
+    pointList[pointList.length - 1].y = startY + y; //ySpeed;
 
     // update Points
     for (var i = 0; i < pointList.length; i++) {

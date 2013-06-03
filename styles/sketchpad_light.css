@@ -1,11 +1,12 @@
-@import url(http://fonts.googleapis.com/css?family=Playfair+Display+SC);
+@import url(http://fonts.googleapis.com/css?family=Vidaloka);
 
 
 body {
 	background-color: #ddd;
-	font-family: "Playfair Display SC", serif;
+	font-family: "Vidaloka", serif;
 	font-size: 16px;
-	text-transform: lowercase;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
 	color: #444;
 	padding: 20px;
 	padding-left: 40px;
