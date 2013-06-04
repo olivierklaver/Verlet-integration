@@ -158,8 +158,8 @@ function draw() {
     if(!startY) startY = pointList[pointList.length - 1].y;
 
     var x = Math.sin(c) * 30;
-    var y = Math.cos(c) * 35;
-    c+=.15;
+    var y = Math.cos(c) * 40;
+    c+=.14;
 
     pointList[pointList.length - 1].x = startX + x; //xSpeed;
     pointList[pointList.length - 1].y = startY + y; //ySpeed;
