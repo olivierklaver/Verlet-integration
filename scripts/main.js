@@ -11,7 +11,7 @@
 
 var backgroundColor = "#eee";
 var blobColor       = "#78FFD0";
-var renderMode      = 2;
+var renderMode      = 1;
 
 var ratio;
 var pointList  = [];
@@ -157,9 +157,9 @@ function draw() {
     if(!startX) startX = pointList[pointList.length - 1].x;
     if(!startY) startY = pointList[pointList.length - 1].y;
 
-    var x = Math.sin(c) * 40;
-    var y = Math.cos(c) * 40;
-    c+=.14;
+    var x = Math.sin(c) * 20;
+    var y = Math.cos(c) * 22;
+    c+=.12;
 
     pointList[pointList.length - 1].x = startX + x; //xSpeed;
     pointList[pointList.length - 1].y = startY + y; //ySpeed;
