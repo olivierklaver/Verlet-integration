@@ -6,7 +6,9 @@
  */
 
 function Point(x, y) {
-
+	
+	"use strict";
+	
     var pub = this;
     var oldx;
     var oldy;
@@ -19,7 +21,7 @@ function Point(x, y) {
 
         pub.x = oldx = x;
         pub.y = oldy = y;
-    })(x, y);
+    }(x, y));
 
 
     pub.refresh = function () {
@@ -37,16 +39,16 @@ function Point(x, y) {
 
     function checkBounds() {
 
-        if (pub.x > width/ratio) {
-            pub.x = width/ratio;
+        if (pub.x > width / ratio) {
+            pub.x = width / ratio;
         }
 
         if (pub.x < 0) {
             pub.x = 0;
         }
 
-        if (pub.y > height/ratio) {
-            pub.y = height/ratio;
+        if (pub.y > height / ratio) {
+            pub.y = height / ratio;
         }
 
         if (pub.y < 0) {
